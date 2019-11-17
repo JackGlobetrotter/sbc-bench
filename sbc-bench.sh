@@ -50,7 +50,7 @@ Main() {
 	done
 
 	CheckRelease
-	CheckLoad
+	#CheckLoad
 	BasicSetup >/dev/null 2>&1
 	InstallPrerequisits
 	InitialMonitoring

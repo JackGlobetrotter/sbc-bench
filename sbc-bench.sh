@@ -65,7 +65,7 @@ Main() {
 	CheckTimeInState after
 	"${SevenZip}" b >/dev/null 2>&1 & # run 7-zip bench in the background
 	CheckClockspeeds # test again loaded system after heating the SoC to the max
-#	DisplayResults
+	DisplayResults
 } # Main
 
 MonitorBoard() {
@@ -251,7 +251,7 @@ TempTest() {
 				while [ ${SocTemp} -le ${TargetTemp} ]; do
 					echo "Heating SoC from current ${SocTemp}°C to ${TargetTemp}°C. This may take some time..."
 					printf "\x1b[1A"
-					sleep 600
+					sleep 2
 					SocTemp=$(ReadSoCTemp | cut -f1 -d'.')
 				done
 				echo -e "Heating SoC from current ${TargetTemp}°C to ${TargetTemp}°C. This may take some time...\c"
